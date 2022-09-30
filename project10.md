@@ -28,8 +28,8 @@ Configured Nginx LB using Web Servers names defined in /etc/hosts:
 `sudo vi /etc/nginx/sites-available/load_balancer.conf`
 
 Insert the following:
-
-<!-- upstream web { 
+```
+upstream web { 
     server 172.31.24.238;
     server 172.31.23.240;
   }   
@@ -41,7 +41,8 @@ server {
 			proxy_set_header x-Forwarded-For $proxy_add_x_forwarded_for;
       			proxy_pass http://web; 
     }
-  }  -->
+  }
+```
 
 ![configure nginx](./images/16_update_nginx_conf.png)
 
